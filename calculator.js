@@ -1,4 +1,5 @@
 let display = document.querySelector(".display");
+let backspace = document.querySelector(".backspace");
 let one = document.querySelector(".one");
 let two = document.querySelector(".two");
 let three = document.querySelector(".three");
@@ -17,7 +18,7 @@ let subtraction = document.querySelector(".subtraction");
 let divison = document.querySelector(".divison");
 
 let firstNum = 0;
-let operatorSign;
+let operatorSign = 0;
 let secondNum = 0;
 
 
@@ -232,6 +233,20 @@ divison.addEventListener("click", function() {
         console.log(operatorSign) 
     }
 
+})
+
+backspace.addEventListener("click", function() {
+    if (display.textContent.slice(-1) == "x" || display.textContent.slice(-1) == "+" || display.textContent.slice(-1) == "-" || display.textContent.slice(-1) == "/" ) {
+        display.textContent = display.textContent.slice(0, -1);
+        firstNum = 0;
+        operatorSign = 0;
+        secondNum = 0;
+
+    } else {
+        display.textContent = display.textContent.slice(0, -1);
+    }
+    
+        
 })
 
 function sumit(num1, num2) {
