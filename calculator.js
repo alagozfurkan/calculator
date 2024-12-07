@@ -137,9 +137,7 @@ zero.addEventListener("click", function() {
 
 equal.addEventListener("click", function() {
     secondNum = display.textContent.replace((firstNum + operatorSign), "")
-    if (operatorSign = "-") {
-        display.textContent = subtractionit(firstNum, secondNum);
-    }
+    operate(operatorSign);
     
 
 })
@@ -152,15 +150,19 @@ clear.addEventListener("click", function() {
         console.log(display.textContent) 
     }
     // burada kaydıgını tuttugun bazı variablelların da içinin boşaltılması lazım bu click'te onu ekle
+    //bu fonksiyon nasıl calısıyor????
 })
 
 sum.addEventListener("click", function() {
     if (display.textContent == "") {
-        display.textContent = " + "
+        display.textContent = "+"
         console.log(display.textContent)
     } else {
-        display.textContent = display.textContent + " + ";
-        console.log(display.textContent) 
+        firstNum = display.textContent;
+        display.textContent = display.textContent + "+";
+        console.log(firstNum)
+        operatorSign = "+"
+        console.log(operatorSign) 
     }
 
 })
@@ -170,8 +172,11 @@ multiplication.addEventListener("click", function() {
         display.textContent = "x"
         console.log(display.textContent)
     } else {
+        firstNum = display.textContent;
         display.textContent = display.textContent + "x";
-        console.log(display.textContent) 
+        console.log(firstNum)
+        operatorSign = "x"
+        console.log(operatorSign) 
     }
 
 })
@@ -196,14 +201,17 @@ divison.addEventListener("click", function() {
         display.textContent = "/"
         console.log(display.textContent)
     } else {
+        firstNum = display.textContent;
         display.textContent = display.textContent + "/";
-        console.log(display.textContent) 
+        console.log(firstNum)
+        operatorSign = "/"
+        console.log(operatorSign) 
     }
 
 })
 
 function sumit(num1, num2) {
-    return num1 + num2
+    return Number(num1) + Number(num2)
 }
 
 function multiplicationit(num1, num2) {
@@ -215,11 +223,17 @@ function subtractionit(num1, num2) {
 }
 
 function divisonit(num1, num2) {
-    num1 / num2
+    return num1 / num2
 }
 
 function operate(operator) {
-    if (operator = "-") {
+    if (operator == "-") {
+        display.textContent = subtractionit(firstNum, secondNum);
+    } else if (operator == "+") {
         display.textContent = sumit(firstNum, secondNum);
+    } else if (operator == "x") {
+        display.textContent = multiplicationit(firstNum, secondNum);
+    } else if (operator == "/") {
+        display.textContent = divisonit(firstNum, secondNum);
     }
 }
