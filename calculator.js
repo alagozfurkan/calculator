@@ -157,6 +157,12 @@ sum.addEventListener("click", function() {
     if (display.textContent == "") {
         display.textContent = "+"
         console.log(display.textContent)
+    } else if (display.textContent.includes("x") || display.textContent.includes("+") || display.textContent.includes("-") || display.textContent.includes("/")) {
+        secondNum = display.textContent.replace((firstNum + operatorSign), "")
+        operate(operatorSign);
+        firstNum = display.textContent;
+        display.textContent = display.textContent + "+"
+        operatorSign = "+"
     } else {
         firstNum = display.textContent;
         display.textContent = display.textContent + "+";
@@ -171,6 +177,12 @@ multiplication.addEventListener("click", function() {
     if (display.textContent == "") {
         display.textContent = "x"
         console.log(display.textContent)
+    } else if (display.textContent.includes("x") || display.textContent.includes("+") || display.textContent.includes("-") || display.textContent.includes("/") )  {
+        secondNum = display.textContent.replace((firstNum + operatorSign), "")
+        operate(operatorSign);
+        firstNum = display.textContent;
+        display.textContent = display.textContent + "x"
+        operatorSign = "x"
     } else {
         firstNum = display.textContent;
         display.textContent = display.textContent + "x";
@@ -185,13 +197,19 @@ subtraction.addEventListener("click", function() {
     if (display.textContent == "") {
         display.textContent = "-"
         console.log(display.textContent)
+    } else if (display.textContent.includes("x") || display.textContent.includes("+") || display.textContent.includes("-") || display.textContent.includes("/")) {
+        secondNum = display.textContent.replace((firstNum + operatorSign), "")
+        operate(operatorSign);
+        firstNum = display.textContent;
+        display.textContent = display.textContent + "-"
+        operatorSign = "-"
+         
     } else {
         firstNum = display.textContent;
         display.textContent = display.textContent + "-";
         console.log(firstNum)
         operatorSign = "-"
         console.log(operatorSign)
-         
     }
 
 })
@@ -200,6 +218,12 @@ divison.addEventListener("click", function() {
     if (display.textContent == "") {
         display.textContent = "/"
         console.log(display.textContent)
+    } else if (display.textContent.includes("x") || display.textContent.includes("+") || display.textContent.includes("-") || display.textContent.includes("/")) {
+        secondNum = display.textContent.replace((firstNum + operatorSign), "")
+        operate(operatorSign);
+        firstNum = display.textContent;
+        display.textContent = display.textContent + "/"
+        operatorSign = "/"
     } else {
         firstNum = display.textContent;
         display.textContent = display.textContent + "/";
