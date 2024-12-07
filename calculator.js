@@ -1,5 +1,6 @@
 let display = document.querySelector(".display");
 let backspace = document.querySelector(".backspace");
+let dot = document.querySelector(".dot")
 let one = document.querySelector(".one");
 let two = document.querySelector(".two");
 let three = document.querySelector(".three");
@@ -247,6 +248,16 @@ backspace.addEventListener("click", function() {
     }
     
         
+})
+
+dot.addEventListener("click", function() {
+    if (display.textContent == "") {
+        display.textContent = "."
+        console.log(display.textContent)
+    } else {
+        display.textContent = display.textContent + ".";
+        console.log(display.textContent) 
+    }
 })
 
 function sumit(num1, num2) {
