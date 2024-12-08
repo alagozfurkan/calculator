@@ -137,6 +137,7 @@ zero.addEventListener("click", function() {
 
 })
 
+
 equal.addEventListener("click", function() {
     secondNum = display.textContent.replace((firstNum + operatorSign), "")
     operate(operatorSign);

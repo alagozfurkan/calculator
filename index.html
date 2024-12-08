@@ -11,27 +11,67 @@
             justify-content: center;
             flex-direction: column;
             align-items: center;
+            margin-top: 200px;
+            
         }
         .numbersContainer {
-            border: 1px solid red;
+            outline: 1px solid red;
+            width: 150px;
+            height: 280px;
             display: flex;
+            flex-wrap: wrap;
+        }
+        .operatorContainer {
+            outline: 1px solid black;
+            width: 150px;
+            height: 280px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .bigContainer {
+            outline: 5px solid gray;
+            display: flex;
+
         }
         button {
             width: 50px;
-            height: 50px;
+            height: 70px;
+            background-color: rgb(47, 48, 49);
+            color: antiquewhite;
+            
         }
+        #idzero {
+            flex: 3;
+        }
+        #idclear {
+            flex: auto;
+        }
+        #idequal {
+            flex: 1 100%;
+        }
+        
         .display  {
-            border: 1px solid blue;
-            width: 300px;
+            
+            width: 290px;
             height: 50px;
             display: flex;
             align-items: flex-end;
             flex-direction: column;
             justify-content: center;
+            margin: 0px;
+            
         }
         p {
-            border: 1px solid salmon;
+            
             font-size: x-large;
+        }
+
+        .displaycontainer {
+            background-color: darkolivegreen;
+            border: 5px solid gray;
+            border-top: 10px solid gray;
+            width: 300px;
+            height: 50px;
         }
     
 
@@ -41,28 +81,32 @@
     <div class="displaycontainer">
         <p class="display"></p>
     </div>
-    <div class="numbersContainer">
-        <button class="one">1</button>
-        <button class="two">2</button>
-        <button class="three">3</button>
-        <button class="four">4</button>
-        <button class="five">5</button>
-        <button class="six">6</button>
-        <button class="seven">7</button>
-        <button class="eight">8</button>
-        <button class="nine">9</button>
-        <button class="zero">0</button>
-    </div>
 
-    <div class="operatorContainer">
-        <button class="equal"> = </button>
-        <button class="clear">Clear</button>
-        <button class="sum">+</button>
-        <button class="multiplication">x</button>
-        <button class="subtraction">-</button>
-        <button class="divison">/</button>
-        <button class="backspace">Back</button>
-        <button class="dot">.</button>
+    <div class="bigContainer">
+        <div class="numbersContainer">
+            <button class="one">1</button>
+            <button class="two">2</button>
+            <button class="three">3</button>
+            <button class="four">4</button>
+            <button class="five">5</button>
+            <button class="six">6</button>
+            <button class="seven">7</button>
+            <button class="eight">8</button>
+            <button class="nine">9</button>
+            <button class="zero" id="idzero">0</button>
+        </div>
+    
+        <div class="operatorContainer">
+            <button class="sum">+</button>
+            <button class="multiplication">x</button>
+            <button class="subtraction">-</button>
+            <button class="divison">/</button>
+            <button class="dot">.</button>
+            <button class="backspace">Back</button>
+            <button class="clear" id="idclear">Clear</button>
+            <button class="equal" id="idequal">=</button>
+            
+        </div>
     </div>
 
     <script src="calculator.js"></script>
