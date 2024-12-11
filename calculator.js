@@ -27,6 +27,23 @@ let secondNum = 0;
 
 console.log(display.textContent);
 
+document.addEventListener("keydown", function(event) {
+    if (event.key == "1" || event.key == "2" || event.key == "3" || 
+        event.key == "4" || event.key == "5" || event.key == "6" || 
+        event.key == "7" || event.key == "8" || event.key == "9" || 
+        event.key == "0") {
+        console.log(event.key)
+        if (display.textContent == "") {
+            display.textContent = event.key
+            console.log(display.textContent)
+        } else {
+            display.textContent = display.textContent + event.key;
+            console.log(display.textContent) 
+        }
+    } else null
+    
+})
+
 one.addEventListener("click", function() {
     if (display.textContent == "") {
         display.textContent = "1"
