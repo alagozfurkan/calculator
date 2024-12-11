@@ -255,6 +255,8 @@ dot.addEventListener("click", function() {
     if (display.textContent == "") {
         display.textContent = "."
         console.log(display.textContent)
+    } else if (display.textContent.includes(".")) {
+        null
     } else {
         display.textContent = display.textContent + ".";
         console.log(display.textContent) 
